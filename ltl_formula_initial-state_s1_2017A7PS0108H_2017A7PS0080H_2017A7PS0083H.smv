@@ -1,0 +1,40 @@
+MODULE main
+VAR
+	state : {s0,s1,s2};
+	p : boolean;
+	q : boolean;
+	r : boolean;
+	
+	ASSIGN
+	init(state):= s1;
+	
+	
+	next(state) := case
+		state = s0 : {s1,s2};
+		state = s1 : {s0,s2};
+		state = s2 : {s2};
+		esac;		
+		p:=case
+			state = s0 : TRUE;
+			state = s1 : FALSE;
+			state = s2 : FALSE;
+			esac;
+		q:=case
+			state = s0 : TRUE;
+			state = s1 : TRUE;
+			state = s2 : FALSE;
+			esac;
+		r:=case
+			state = s2 : TRUE;
+			state = s0 : FALSE;			
+			state = s1 : TRUE;
+			
+			esac;
+			
+			
+		
+		
+			
+	
+	
+	
